@@ -1,4 +1,5 @@
 require 'csv'
+require 'erb'
 CSV.foreach('planet_express_logs.csv', headers: true, header_converters: :symbol) do |row|
     puts row.inspect # replace with your logic
 end
@@ -68,21 +69,21 @@ amy_bonus = amy_trips.reduce(0) { |sum, delivery| sum + delivery.money }/10
 bender_bonus = bender_trips.reduce(0) { |sum, delivery| sum + delivery.money }/10
 leela_bonus = leela_trips.reduce(0) { |sum, delivery| sum + delivery.money }/10
 
-fry_total = fry_trips.reduce { |sum, delivery| sum + delivery.money }
-amy_total = amy_trips.reduce { |sum, delivery| sum + delivery.money }
-bender_total = bender_trips.reduce { |sum, delivery| sum + delivery.money }
-leela_total = leela_trips.reduce { |sum, delivery| sum + delivery.money }
+fry_total = fry_trips.reduce(0) { |sum, delivery| sum + delivery.money }
+amy_total = amy_trips.reduce(0) { |sum, delivery| sum + delivery.money }
+bender_total = bender_trips.reduce(0) { |sum, delivery| sum + delivery.money }
+leela_total = leela_trips.reduce(0) { |sum, delivery| sum + delivery.money }
 
 
 
 
 
-
-money = money.collect { |row| money [:money]}
-pilots = pilots.collect { |row| pilots [:pilots]}
-puts deliveries
-puts money
-puts pilots
+#
+# money = money.collect { |row| money [:money]}
+# pilots = pilots.collect { |row| pilots [:pilots]}
+# puts deliveries
+# puts money
+# puts pilots
 
   new_file = File.open("./planet_express_logs.html", 'w+')
   new_file << ERB.new(File.read("report.erb")).result(binding)

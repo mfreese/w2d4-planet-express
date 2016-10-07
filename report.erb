@@ -1,80 +1,114 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-   <script type="text/javascript">
-     google.charts.load('current', {'packages':['corechart']});
-     google.charts.setOnLoadCallback(drawChart);
-     function drawChart() {
+    <head>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {'packages': ['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
 
-       var data = google.visualization.arrayToDataTable([
-         ['Task', 'Hours per Day'],
-         ['Fry',     <%= fry_total %>],
-         ['Amy',      <%= amy_total %>],
-         ['Bender',  <%= bender_total %>],
-         ['Leela', <%= leela_total %>],
+                var data = google.visualization.arrayToDataTable([
+                    [
+                        'Task', 'Hours per Day'
+                    ],
+                    [
+                        'Fry', <%= fry_total %>
+                    ],
+                    [
+                        'Amy', <%= amy_total %>
+                    ],
+                    [
+                        'Bender', <%= bender_total %>
+                    ],
+                    ['Leela', <%= leela_total %>]
+                ]);
 
-       ]);
+                var options = {
+                    title: 'Total Money Earned'
+                };
 
-       var options = {
-         title: 'Total Money Earned'
-       };
+                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
-       var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                chart.draw(data, options);
+            }
+        </script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+               <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css"/>
+               <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 
-       chart.draw(data, options);
-     }
-   </script>
- </head>
- <body>
-   <div id="piechart" style="width: 900px; height: 500px;"></div>
-    <meta charset="utf-8">
-    <title>Planet Express</title>
-  <h1> Total Profit <%= money_sum %> <h1>
+    </head>
+    <body>
+        <div id="piechart" style="width: 900px; height: 500px;"></div>
+        <meta charset="utf-8">
+        <title>Planet Express</title>
+        <h1>
+            Total Profit
+            <%= money_sum %>
+          </h1>
 
-    <table>
-         <% deliveries.each do |delivery| %>
- <tr>
-   <th></th>
-   <th>Savings</th>
- </tr>
- <tr>
+                <table class= "table">
+                    <% delivery_objects.each do |delivery| %>
+                    <tr>
+                        <th></th>
 
-   <td><%= delivery.destination %></td>
-   <td><%= delivery.shipment %></td>
-      <td><%= delivery.crates %></td>
-        <td><%= delivery.money %> </td>
-      <td> <% delivery.pilot %> </td>
-      <% end %>
- </tr>
-</table>
+                    </tr>
+                    <tr>
 
-<table>
-<tr>
-<th>Pilot</th>
-<th>Number of Trips</th>
-<th>Bonus</th>
-</tr>
-<tr>
-<td>  Fry </td>
-<td> <%= fry_trips %></td>
-<td> <% fry_bonus %></td>
-</tr>
-<tr>
-<td>  Amy </td>
-<td> <%= amy_trips %></td>
-<td> <% amy_bonus %></td>
-</tr>
-</table>
-<tr>
-<td>  Bender </td>
-<td> <%= bender_trips %></td>
-<td> <% bender_bonus %></td>
-</tr>
-<tr>
-<td>  Leela </td>
-<td> <%= leela_trips %></td>
-<td> <% leela_bonus %></td>
-</tr>
-  </body>
-</html>
+                        <td><%= delivery.destination %></td>
+                        <td><%= delivery.shipment %></td>
+                        <td><%= delivery.crates %></td>
+                        <td><%= delivery.money %>
+                        </td>
+                        <td>
+                            <% delivery.pilot %>
+                        </td>
+                        <% end %>
+                    </tr>
+                </table>
+
+                <table class= "table">
+                    <tr>
+                        <th>Pilot</th>
+                        <th>Number of Trips</th>
+                        <th>Bonus</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Fry
+                        </td>
+                        <td>
+                            <%= fry_trips.length %></td>
+                        <td>
+                            <%= fry_bonus %></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Amy
+                        </td>
+                        <td>
+                            <%= amy_trips.length %></td>
+                        <td>
+                            <%= amy_bonus %></td>
+                    </tr>
+
+                <tr>
+                    <td>
+                        Bender
+                    </td>
+                    <td>
+                        <%= bender_trips.length %></td>
+                    <td>
+                        <%= bender_bonus %></td>
+                </tr>
+                <tr>
+                    <td>
+                        Leela
+                    </td>
+                    <td>
+                        <%= leela_trips.length %></td>
+                    <td>
+                        <%= leela_bonus %></td>
+                </tr>
+              </table>
+            </body>
+        </html>

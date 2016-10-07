@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {'packages': ['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+
+                var data = google.visualization.arrayToDataTable([
+                    [
+                        'Task', 'Hours per Day'
+                    ],
+                    [
+                        'Fry', 35000
+                    ],
+                    [
+                        'Amy', 15000
+                    ],
+                    [
+                        'Bender', 355600
+                    ],
+                    ['Leela', 131295]
+                ]);
+
+                var options = {
+                    title: 'Total Money Earned'
+                };
+
+                var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+                chart.draw(data, options);
+            }
+        </script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+               <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css"/>
+               <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+
+    </head>
+    <body>
+        <div id="piechart" style="width: 900px; height: 500px;"></div>
+        <meta charset="utf-8">
+        <title>Planet Express</title>
+        <h1>
+            Total Profit
+            536895
+          </h1>
+
+                <table class= "table">
+                    
+                    <tr>
+                        <th></th>
+
+                    </tr>
+                    <tr>
+
+                        <td>Earth</td>
+                        <td>Hamburgers</td>
+                        <td>150</td>
+                        <td>30000
+                        </td>
+                        <td>
+                            
+                        </td>
+                        
+                    <tr>
+                        <th></th>
+
+                    </tr>
+                    <tr>
+
+                        <td>Moon</td>
+                        <td>Tacos</td>
+                        <td>33</td>
+                        <td>44500
+                        </td>
+                        <td>
+                            
+                        </td>
+                        
+                    <tr>
+                        <th></th>
+
+                    </tr>
+                    <tr>
+
+                        <td>Earth</td>
+                        <td>Movies</td>
+                        <td>34</td>
+                        <td>5000
+                        </td>
+                        <td>
+                            
+                        </td>
+                        
+                    <tr>
+                        <th></th>
+
+                    </tr>
+                    <tr>
+
+                        <td>Mars</td>
+                        <td>BBQ Sauce</td>
+                        <td>999</td>
+                        <td>15000
+                        </td>
+                        <td>
+                            
+                        </td>
+                        
+                    <tr>
+                        <th></th>
+
+                    </tr>
+                    <tr>
+
+                        <td>Uranus</td>
+                        <td>Whiskey</td>
+                        <td>1000</td>
+                        <td>345600
+                        </td>
+                        <td>
+                            
+                        </td>
+                        
+                    <tr>
+                        <th></th>
+
+                    </tr>
+                    <tr>
+
+                        <td>Jupiter</td>
+                        <td>Books</td>
+                        <td>10</td>
+                        <td>3451
+                        </td>
+                        <td>
+                            
+                        </td>
+                        
+                    <tr>
+                        <th></th>
+
+                    </tr>
+                    <tr>
+
+                        <td>Pluto</td>
+                        <td>Beer</td>
+                        <td>100</td>
+                        <td>2344
+                        </td>
+                        <td>
+                            
+                        </td>
+                        
+                    <tr>
+                        <th></th>
+
+                    </tr>
+                    <tr>
+
+                        <td>Uranus</td>
+                        <td>Pizza</td>
+                        <td>66</td>
+                        <td>10000
+                        </td>
+                        <td>
+                            
+                        </td>
+                        
+                    <tr>
+                        <th></th>
+
+                    </tr>
+                    <tr>
+
+                        <td>Saturn</td>
+                        <td>Pizza</td>
+                        <td>26</td>
+                        <td>1000
+                        </td>
+                        <td>
+                            
+                        </td>
+                        
+                    <tr>
+                        <th></th>
+
+                    </tr>
+                    <tr>
+
+                        <td>Mercury</td>
+                        <td>Pizza</td>
+                        <td>36</td>
+                        <td>80000
+                        </td>
+                        <td>
+                            
+                        </td>
+                        
+                    </tr>
+                </table>
+
+                <table class= "table">
+                    <tr>
+                        <th>Pilot</th>
+                        <th>Number of Trips</th>
+                        <th>Bonus</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Fry
+                        </td>
+                        <td>
+                            2</td>
+                        <td>
+                            3500</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Amy
+                        </td>
+                        <td>
+                            1</td>
+                        <td>
+                            1500</td>
+                    </tr>
+
+                <tr>
+                    <td>
+                        Bender
+                    </td>
+                    <td>
+                        2</td>
+                    <td>
+                        35560</td>
+                </tr>
+                <tr>
+                    <td>
+                        Leela
+                    </td>
+                    <td>
+                        5</td>
+                    <td>
+                        13129</td>
+                </tr>
+              </table>
+            </body>
+        </html>
